@@ -1,18 +1,14 @@
-import java.util.Scanner;
-
-class Calculator {
+class calculator {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter first number: ");
-        double a = sc.nextDouble();
+        if (args.length != 3) {
+            System.out.println("Usage: java calculator <num1> <operator> <num2>");
+            return;
+        }
 
-        System.out.print("Enter second number: ");
-        double b = sc.nextDouble();
-
-        System.out.println("Choose operation:");
-        System.out.println("+  -  *  /");
-        char op = sc.next().charAt(0);
+        double a = Double.parseDouble(args[0]);
+        char op = args[1].charAt(0);
+        double b = Double.parseDouble(args[2]);
 
         double result;
 
@@ -39,6 +35,5 @@ class Calculator {
         }
 
         System.out.println("Result: " + result);
-        sc.close();
     }
 }
